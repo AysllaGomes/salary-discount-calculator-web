@@ -11,7 +11,7 @@ import { environment } from '../../../../environments/environment';
     providedIn: 'root'
 })
 export class SalaryService {
-    private apiUrl = `${environment.api.url}/salary-discount-calculator`;
+    private apiUrl = `${environment.api.url}/discount`;
 
     constructor(
         protected http: HttpClient
@@ -27,5 +27,9 @@ export class SalaryService {
 
     getSalary(id: number): Observable<Salary> {
         return this.http.get<Salary>(`${this.apiUrl}/${id}`);
+    }
+
+    calculateSalary(grossSalary: number, dependents: number): Observable<any> {
+        return this.http.get(`${this.apiUrl}?salary=${grossSalary}&dependents=${dependents}`);
     }
 }

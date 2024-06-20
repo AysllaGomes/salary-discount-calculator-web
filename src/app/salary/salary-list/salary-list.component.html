@@ -1,4 +1,16 @@
-<div *ngIf="salaryData">
-    <h1>Salary Data</h1>
-    <pre>{{ salaryData | json }}</pre>
+<form (ngSubmit)="calculateSalary()" #salaryForm="ngForm">
+    <div class="form-group">
+        <label for="grossSalary">Salário bruto</label>
+        <input type="number" class="form-control" id="grossSalary" name="grossSalary" [(ngModel)]="formData.grossSalary" required>
+    </div>
+    <div class="form-group">
+        <label for="dependents">Número de dependentes</label>
+        <input type="number" class="form-control" id="dependents" name="dependents" [(ngModel)]="formData.dependents" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Calcular</button>
+</form>
+
+<div *ngIf="salary">
+    <h2>Resultado</h2>
+    <p>Salário líquido: {{ salary.netSalary }}</p>
 </div>
