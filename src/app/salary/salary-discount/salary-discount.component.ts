@@ -6,11 +6,11 @@ import { Salary } from '../shared/models/salary.model';
 import { SalaryService } from '../shared/services/salary.service';
 
 @Component({
-  selector: 'app-salary-list',
-  templateUrl: './salary-list.component.html',
-  styleUrl: './salary-list.component.scss'
+  selector: 'app-salary-discount',
+  templateUrl: './salary-discount.component.html',
+  styleUrl: './salary-discount.component.scss'
 })
-export class SalaryListComponent implements OnInit {
+export class SalaryDiscountComponent implements OnInit {
     public form: FormGroup;
 
     public salary: Salary;
@@ -26,8 +26,14 @@ export class SalaryListComponent implements OnInit {
 
     createForm(): FormGroup {
         this.form = this.formBuilder.group({
-            salary: [null, Validators.required],
-            dependentCount: [null, Validators.required]
+            salary: [
+                null,
+                Validators.required
+            ],
+            dependentCount: [
+                null,
+                Validators.required
+            ]
         });
 
         return this.form;
