@@ -5,13 +5,11 @@ import { FormsModule } from '@angular/forms';
 
 import { SalaryComponent } from './salary.component';
 import { SalaryListComponent } from './salary-list/salary-list.component';
-import { SalaryDetailComponent } from './salary-detail/salary-detail.component';
 
 @NgModule({
     declarations: [
         SalaryComponent,
         SalaryListComponent,
-        SalaryDetailComponent
     ],
     imports: [
         CommonModule,
