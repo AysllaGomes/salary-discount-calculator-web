@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { SalaryComponent } from './salary.component';
 import { SalaryListComponent } from './salary-list/salary-list.component';
@@ -13,7 +12,7 @@ import { SalaryListComponent } from './salary-list/salary-list.component';
     ],
     imports: [
         CommonModule,
-        FormsModule,
+        ReactiveFormsModule,
     ]
 })
 export class SalaryModule {}

@@ -14,22 +14,14 @@ export class SalaryService {
     private apiUrl = `${environment.api.url}/discount`;
 
     constructor(
-        protected http: HttpClient
+        protected httpClient: HttpClient
     ) {}
 
-    getSalaryData(): Observable<any> {
-        return this.http.get<any>(this.apiUrl);
-    }
-
     getSalaries(): Observable<Salary[]> {
-        return this.http.get<Salary[]>(this.apiUrl);
-    }
-
-    getSalary(id: number): Observable<Salary> {
-        return this.http.get<Salary>(`${this.apiUrl}/${id}`);
+        return this.httpClient.get<Salary[]>(this.apiUrl);
     }
 
     calculateSalary(grossSalary: number, dependents: number): Observable<any> {
-        return this.http.get(`${this.apiUrl}?salary=${grossSalary}&dependents=${dependents}`);
+        return this.httpClient.get(`${this.apiUrl}?salary=${grossSalary}&dependents=${dependents}`);
     }
 }

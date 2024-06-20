@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { Salary } from '../shared/models/salary.model';
 
@@ -10,19 +11,31 @@ import { SalaryService } from '../shared/services/salary.service';
   styleUrl: './salary-list.component.scss'
 })
 export class SalaryListComponent implements OnInit {
-    public formData: any = {};
+    public form: FormGroup;
 
     public salary: Salary;
 
     constructor(
-        protected salaryService: SalaryService
+        protected formBuilder: FormBuilder,
+        protected salaryService: SalaryService,
     ) {}
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        this.createForm();
+    }
 
-    calculateSalary(): void {
-        this.salaryService.calculateSalary(this.formData.grossSalary, this.formData.dependents)
-            .subscribe((result) => {
+    createForm(): FormGroup {
+        this.form = this.formBuilder.group({
+            salary: [null, Validators.required],
+            dependentCount: [null, Validators.required]
+        });
+
+        return this.form;
+    }
+
+    onSubmit(): void {
+        this.salaryService.calculateSalary(this.form.value.salary, this.form.value.dependentCount)
+            .subscribe((result): void => {
                 this.salary = result;
             });
     }

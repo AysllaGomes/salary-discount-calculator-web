@@ -1,13 +1,13 @@
-<form (ngSubmit)="calculateSalary()" #salaryForm="ngForm">
-    <div class="form-group">
-        <label for="grossSalary">Salário bruto</label>
-        <input type="number" class="form-control" id="grossSalary" name="grossSalary" [(ngModel)]="formData.grossSalary" required>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="salary">Salário:</label>
+        <input type="number" id="salary" formControlName="salary">
     </div>
-    <div class="form-group">
-        <label for="dependents">Número de dependentes</label>
-        <input type="number" class="form-control" id="dependents" name="dependents" [(ngModel)]="formData.dependents" required>
+    <div>
+        <label for="dependentCount">Número de dependentes:</label>
+        <input type="number" id="dependentCount" formControlName="dependentCount">
     </div>
-    <button type="submit" class="btn btn-primary">Calcular</button>
+    <button type="submit" [disabled]="form.invalid">Enviar</button>
 </form>
 
 <div *ngIf="salary">
