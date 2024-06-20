@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { SalaryDiscountComponent } from './salary/component/salary-discount/salary-discount.component';
+import { SalaryComponent } from './salary/component/salary/salary.component';
 
 const routes: Routes = [
     {
         path: 'salaries',
-        component: SalaryDiscountComponent
+        component: SalaryComponent
     },
     {
         path: '',
