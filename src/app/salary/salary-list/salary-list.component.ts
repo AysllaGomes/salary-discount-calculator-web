@@ -35,8 +35,8 @@ export class SalaryListComponent implements OnInit {
 
     onSubmit(): void {
         this.salaryService.calculateSalary(this.form.value.salary, this.form.value.dependentCount)
-            .subscribe((result): void => {
-                this.salary = result;
+            .subscribe((salary: Salary): void => {
+                this.salary = salary;
             });
     }
 }
