@@ -34,9 +34,6 @@
                             }
                         ],
                         "styles": [
-                            "node_modules/primeng/resources/primeng.min.css",
-                            "node_modules/quill/dist/quill.core.css",
-                            "node_modules/quill/dist/quill.snow.css",
                             "src/styles.scss"
                         ],
                         "scripts": [
@@ -145,6 +142,7 @@
     },
     "schematics": {
         "@schematics/angular:component": {
+            "standalone": false,
             "prefix": "app"
         },
         "@schematics/angular:directive": {
