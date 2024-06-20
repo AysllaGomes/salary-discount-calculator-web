@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
     api: {
-        url: 'http://api.salary-discount-calculator.local.com'
+        url: 'http://localhost:3000'
     },
     debugRequest: false,
     lang: 'pt',
