@@ -5,7 +5,7 @@ import { SalaryService } from "../shared/services/salary.service";
 @Component({
   selector: 'app-salary-list',
   templateUrl: './salary-list.component.html',
-  styleUrl: './salary-list.component.css'
+  styleUrl: './salary-list.component.scss'
 })
 export class SalaryListComponent implements OnInit {
     salaryData: any;
