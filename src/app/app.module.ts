@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 import { AppComponent } from './app.component';
 
@@ -21,7 +22,9 @@ import { SalaryModule } from './salary/module/salary.module';
         HttpClientModule,
         SalaryModule,
     ],
-    providers: [],
+    providers: [
+        provideAnimationsAsync()
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -34,7 +34,8 @@
                             }
                         ],
                         "styles": [
-                            "src/styles.scss"
+                          "@angular/material/prebuilt-themes/azure-blue.css",
+                          "src/styles.scss"
                         ],
                         "scripts": [
                             "node_modules/quill/dist/quill.js"
@@ -94,7 +95,8 @@
                         "tsConfig": "src/tsconfig.spec.json",
                         "karmaConfig": "src/karma.conf.js",
                         "styles": [
-                            "src/styles.scss"
+                          "@angular/material/prebuilt-themes/azure-blue.css",
+                          "src/styles.scss"
                         ],
                         "scripts": [],
                         "assets": [
