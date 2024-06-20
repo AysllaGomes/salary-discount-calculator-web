@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { SalaryComponent } from './salary.component';
-import { SalaryDiscountComponent } from './salary-discount/salary-discount.component';
+import { SalaryComponent } from '../component/salary/salary.component';
+import { SalaryDiscountComponent } from '../component/salary-discount/salary-discount.component';
 
 @NgModule({
     declarations: [

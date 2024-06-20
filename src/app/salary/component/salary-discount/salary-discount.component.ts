@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { Salary } from '../shared/models/salary.model';
+import { Salary } from '../../shared/models/salary.model';
 
-import { SalaryService } from '../shared/services/salary.service';
+import { SalaryService } from '../../shared/services/salary.service';
 
 @Component({
   selector: 'app-salary-discount',
