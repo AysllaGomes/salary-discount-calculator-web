@@ -1,9 +1,10 @@
+import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { Salary } from '../../shared/models/salary.model';
 
 import { SalaryService } from '../../shared/services/salary.service';
+import { FormUtilsService } from '../../../shared/service/form-utils.service';
 
 @Component({
   selector: 'app-salary-discount',
@@ -11,42 +12,28 @@ import { SalaryService } from '../../shared/services/salary.service';
   styleUrl: './salary-discount.component.scss'
 })
 export class SalaryDiscountComponent implements OnInit {
+
     public form: FormGroup;
 
     public salary: Salary;
 
     constructor(
-        protected formBuilder: FormBuilder,
         protected salaryService: SalaryService,
+        protected formUtilsService: FormUtilsService,
     ) {}
 
-    ngOnInit(): void {
-        this.createForm();
+    ngOnInit(): void {}
+
+    onCreateForm(form: FormGroup): void {
+        this.form = form;
     }
 
-    createForm(): FormGroup {
-        this.form = this.formBuilder.group({
-            salary: [
-                null,
-                Validators.required
-            ],
-            discount: [
-                null,
-                Validators.required
-            ],
-            dependentCount: [
-                null,
-                Validators.required
-            ]
-        });
-
-        return this.form;
-    }
-
-    onSubmit(): void {
-        this.salaryService.calculateSalary(this.form.value.salary)
-            .subscribe((salary: Salary): void => {
-                this.salary = salary;
-            });
+    search(): void {
+        if (this.formUtilsService.validate(this.form)) {
+            this.salaryService.calculateSalary(this.form.value.salary)
+                .subscribe((salary: Salary): void => {
+                    this.salary = salary;
+                });
+        }
     }
 }
