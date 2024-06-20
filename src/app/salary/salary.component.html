@@ -1,0 +1,8 @@
+<div>
+  <label for="salary">Salário:</label>
+  <input id="salary" [(ngModel)]="salary" type="number">
+  <button (click)="calculateDiscount()">Calcular Desconto</button>
+</div>
+<div *ngIf="discountedSalary !== undefined">
+  <p>Salário com Desconto: {{ discountedSalary }}</p>
+</div>
