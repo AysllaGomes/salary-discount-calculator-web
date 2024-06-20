@@ -30,6 +30,10 @@ export class SalaryDiscountComponent implements OnInit {
                 null,
                 Validators.required
             ],
+            discount: [
+                null,
+                Validators.required
+            ],
             dependentCount: [
                 null,
                 Validators.required
@@ -40,7 +44,7 @@ export class SalaryDiscountComponent implements OnInit {
     }
 
     onSubmit(): void {
-        this.salaryService.calculateSalary(this.form.value.salary, this.form.value.dependentCount)
+        this.salaryService.calculateSalary(this.form.value.salary)
             .subscribe((salary: Salary): void => {
                 this.salary = salary;
             });
