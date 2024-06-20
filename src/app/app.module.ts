@@ -7,6 +7,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 
 import { AppComponent } from './app.component';
 
+import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { SalaryModule } from './salary/module/salary.module';
 
@@ -20,6 +21,7 @@ import { SalaryModule } from './salary/module/salary.module';
         RouterModule,
         AppRoutingModule,
         HttpClientModule,
+        SharedModule,
         SalaryModule,
     ],
     providers: [

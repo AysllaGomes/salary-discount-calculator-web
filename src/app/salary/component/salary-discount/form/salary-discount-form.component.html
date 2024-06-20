@@ -1,0 +1,38 @@
+<form [formGroup]="form" class="row">
+
+    <div *ngIf="form" class="ui-g form-group">
+        <div class="col-md-6">
+            <mat-form-field appearance="fill">
+                <mat-label>Salário</mat-label>
+                <input matInput type="number" formControlName="salary">
+            </mat-form-field>
+
+            <app-shared-component-form-message
+                [field]="form.get('salary')">
+            </app-shared-component-form-message>
+        </div>
+
+        <div class="col-md-6">
+            <mat-form-field appearance="fill">
+                <mat-label>Descontos</mat-label>
+                <input matInput type="number" formControlName="discount">
+            </mat-form-field>
+
+            <app-shared-component-form-message
+                [field]="form.get('discount')">
+            </app-shared-component-form-message>
+        </div>
+
+        <div class="col-md-6">
+            <mat-form-field appearance="fill">
+                <mat-label>Número de dependentes</mat-label>
+                <input matInput type="number" formControlName="dependentCount">
+            </mat-form-field>
+
+            <app-shared-component-form-message
+                [field]="form.get('dependentCount')">
+            </app-shared-component-form-message>
+        </div>
+    </div>
+
+</form>
