@@ -1,6 +1,9 @@
 {
     "name": "salary-discount-calculator",
     "version": "0.0.1",
+    "engines": {
+        "node": "18.19.0"
+    },
     "scripts": {
         "ng": "ng",
         "start": "ng serve --watch",
