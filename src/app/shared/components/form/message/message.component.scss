@@ -1,0 +1,13 @@
+@keyframes show-message {
+    to {
+        visibility: visible;
+        height: auto;
+    }
+}
+
+.show-message {
+    visibility: hidden;
+    height: 0;
+    margin-top: -15px;
+    animation: 0s linear 0.1s forwards show-message ;
+}

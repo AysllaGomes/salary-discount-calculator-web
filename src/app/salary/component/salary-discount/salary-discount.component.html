@@ -1,40 +1,23 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()" class="row">
-    <div class="col-md-6">
-        <mat-form-field appearance="fill">
-            <mat-label>Salário</mat-label>
-            <input matInput type="number" formControlName="salary">
-        </mat-form-field>
-    </div>
-
-    <div class="col-md-6">
-        <mat-form-field appearance="fill">
-            <mat-label>Descontos</mat-label>
-            <input matInput type="number" formControlName="discount">
-        </mat-form-field>
-    </div>
-
-    <div class="col-md-6">
-        <mat-form-field appearance="fill">
-            <mat-label>Número de dependentes</mat-label>
-            <input matInput type="number" formControlName="dependentCount">
-        </mat-form-field>
-    </div>
+<div>
+    <app-salary-discount-form
+        (onCreateForm)="onCreateForm($event)">
+    </app-salary-discount-form>
 
     <div class="col-md-12">
         <button
             mat-raised-button
             color="primary"
             type="submit"
-            [disabled]="form.invalid"
+            (click)="search()"
         >
             Enviar
         </button>
     </div>
-</form>
 
-<div *ngIf="salary" class="row">
-    <div class="col-md-12">
-        <h2>Resultado</h2>
-        <p>Salário líquido: {{ salary.netSalary }}</p>
+    <div *ngIf="salary" class="row">
+        <div class="col-md-12">
+            <h2>Resultado</h2>
+            <p>Salário líquido: {{ salary.netSalary }}</p>
+        </div>
     </div>
 </div>

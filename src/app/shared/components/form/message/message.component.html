@@ -1,0 +1,5 @@
+<div *ngIf="getMessageList().length" class="show-message">
+    <mat-error *ngFor="let message of getMessageList()">
+        {{message}}
+    </mat-error>
+</div>
