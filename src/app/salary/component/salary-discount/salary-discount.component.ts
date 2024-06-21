@@ -17,6 +17,8 @@ export class SalaryDiscountComponent implements OnInit {
 
     public salary: Salary;
 
+    public calculate = 'Calcular'
+
     constructor(
         protected salaryService: SalaryService,
         protected formUtilsService: FormUtilsService,

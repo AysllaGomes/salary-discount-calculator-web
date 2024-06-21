@@ -1,8 +1,8 @@
-<form [formGroup]="form" class="row">
+<form [formGroup]="form" fxLayout="column" fxLayoutGap="20px" class="form-container">
+    <div *ngIf="form" fxLayout="row" fxLayoutGap="20px" fxFlex="100" fxLayoutWrap>
 
-    <div *ngIf="form" class="ui-g form-group">
-        <div class="col-md-6">
-            <mat-form-field appearance="fill">
+        <div fxFlex="40" fxFlex.xs="100" fxFlex.sm="100">
+            <mat-form-field appearance="fill" fxFlex="100">
                 <mat-label>Salário</mat-label>
                 <input matInput type="number" formControlName="salary">
             </mat-form-field>
@@ -12,8 +12,8 @@
             </app-shared-component-form-message>
         </div>
 
-        <div class="col-md-6">
-            <mat-form-field appearance="fill">
+        <div fxFlex="40" fxFlex.xs="100" fxFlex.sm="100">
+            <mat-form-field appearance="fill" fxFlex="100">
                 <mat-label>Descontos</mat-label>
                 <input matInput type="number" formControlName="discount">
             </mat-form-field>
@@ -23,8 +23,8 @@
             </app-shared-component-form-message>
         </div>
 
-        <div class="col-md-6">
-            <mat-form-field appearance="fill">
+        <div fxFlex="40" fxFlex.xs="100" fxFlex.sm="100">
+            <mat-form-field appearance="fill" fxFlex="100">
                 <mat-label>Número de dependentes</mat-label>
                 <input matInput type="number" formControlName="dependentCount">
             </mat-form-field>
@@ -33,6 +33,6 @@
                 [field]="form.get('dependentCount')">
             </app-shared-component-form-message>
         </div>
-    </div>
 
+    </div>
 </form>
