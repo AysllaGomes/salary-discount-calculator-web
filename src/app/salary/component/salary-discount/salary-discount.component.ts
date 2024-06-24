@@ -45,9 +45,7 @@ export class SalaryDiscountComponent implements OnInit {
                     next: (salary: Salary): void => {
                         this.salary = salary;
                     },
-                    error: (error: any): void => {
-                        console.log('error', error);
-                        console.error('Error calculating salary:', error);
+                    error: (error: Error): void => {
                         Swal.fire({
                             icon: 'error',
                             title: 'Oops...',
