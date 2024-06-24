@@ -17,8 +17,8 @@ export class SalaryService {
         protected httpClient: HttpClient
     ) {}
 
-    calculateSalary(grossSalary: number): Observable<Salary> {
-        const url: string = `${this.apiUrl}?salary=${grossSalary}`;
+    calculateSalary(salary: number, discount: number, dependents: number): Observable<Salary> {
+        const url: string = `${this.apiUrl}?salary=${salary}&discount=${discount}&dependents=${dependents}`;
         return this.httpClient.get<Salary>(url);
     }
 }
