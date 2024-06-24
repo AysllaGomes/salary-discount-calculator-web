@@ -11,21 +11,21 @@ This project is an Angular application that calculates the net salary based on g
 
 1. Clone the repository:
 
-```bash
-    https://github.com/AysllaGomes/salary-discount-calculator-web.git
-```
+    ```bash
+        https://github.com/AysllaGomes/salary-discount-calculator-web.git
+    ```
 
 2. Install dependencies:
 
-```bash
-    npm install
-```
+    ```bash
+        npm install
+    ```
 
 3. Start the development server:
 
-```bash
-    ng serve
-```
+    ```bash
+        ng serve
+    ```
 
 4. Open your browser and navigate to `http://localhost:4200`.
 
