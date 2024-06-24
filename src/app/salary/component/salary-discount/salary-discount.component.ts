@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Salary } from '../../shared/models/salary.model';
 import { DataFormSalary } from '../../shared/models/data-form-salary.model';
 
+import { AlertService } from '../../../shared/service/alert.service';
 import { SalaryService } from '../../shared/services/salary.service';
 import { FormUtilsService } from '../../../shared/service/form-utils.service';
 
@@ -20,9 +21,10 @@ export class SalaryDiscountComponent implements OnInit {
 
     public dataForm: DataFormSalary;
 
-    public calculate = 'Calcular'
+    public calculate: string = 'Calcular';
 
     constructor(
+        protected alertService: AlertService,
         protected salaryService: SalaryService,
         protected formUtilsService: FormUtilsService,
     ) {}
@@ -43,10 +45,17 @@ export class SalaryDiscountComponent implements OnInit {
                     next: (salary: Salary): void => {
                         this.salary = salary;
                     },
-                    error: (err: any): void => {
-                        console.error('Error calculating salary:', err);
+                    error: (error: Error): void => {
+                        this.loadErrorAction(error);
                     }
                 });
         }
+    }
+
+    loadErrorAction(error: Error): void {
+        this.alertService.error(
+            'Ops...',
+            error.message
+        );
     }
 }

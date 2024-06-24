@@ -5,6 +5,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 
+import { NgxMaskDirective } from 'ngx-mask';
+
 import { SharedModule } from '../../shared/shared.module';
 
 import { SalaryComponent } from '../component/salary/salary.component';
@@ -26,6 +28,7 @@ import { SalaryDiscountFormComponent } from '../component/salary-discount/form/s
         MatInputModule,
         MatButtonModule,
         FlexLayoutModule,
+        NgxMaskDirective,
     ]
 })
 export class SalaryModule {}
