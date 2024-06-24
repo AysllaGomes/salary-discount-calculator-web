@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+
 import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
@@ -43,8 +45,14 @@ export class SalaryDiscountComponent implements OnInit {
                     next: (salary: Salary): void => {
                         this.salary = salary;
                     },
-                    error: (err: any): void => {
-                        console.error('Error calculating salary:', err);
+                    error: (error: any): void => {
+                        console.log('error', error);
+                        console.error('Error calculating salary:', error);
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: `Error: ${error.message}`,
+                        }).then((): void => {});
                     }
                 });
         }
