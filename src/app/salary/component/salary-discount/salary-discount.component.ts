@@ -2,6 +2,7 @@ import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 import { Salary } from '../../shared/models/salary.model';
+import { DataFormSalary } from '../../shared/models/data-form-salary.model';
 
 import { SalaryService } from '../../shared/services/salary.service';
 import { FormUtilsService } from '../../../shared/service/form-utils.service';
@@ -16,6 +17,8 @@ export class SalaryDiscountComponent implements OnInit {
     public form: FormGroup;
 
     public salary: Salary;
+
+    public dataForm: DataFormSalary;
 
     public calculate = 'Calcular'
 
@@ -32,9 +35,17 @@ export class SalaryDiscountComponent implements OnInit {
 
     search(): void {
         if (this.formUtilsService.validate(this.form)) {
-            this.salaryService.calculateSalary(this.form.value.salary)
-                .subscribe((salary: Salary): void => {
-                    this.salary = salary;
+            const { salary, discount, dependentCount } = this.form.value;
+            this.dataForm = { salary, discount, dependentCount };
+
+            this.salaryService.calculateSalary(salary, discount, dependentCount)
+                .subscribe({
+                    next: (salary: Salary): void => {
+                        this.salary = salary;
+                    },
+                    error: (err: any): void => {
+                        console.error('Error calculating salary:', err);
+                    }
                 });
         }
     }
