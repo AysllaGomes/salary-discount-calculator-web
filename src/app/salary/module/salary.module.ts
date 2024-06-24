@@ -7,6 +7,8 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { NgxMaskDirective } from 'ngx-mask';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { SharedModule } from '../../shared/shared.module';
 
 import { SalaryComponent } from '../component/salary/salary.component';
@@ -29,6 +31,7 @@ import { SalaryDiscountFormComponent } from '../component/salary-discount/form/s
         MatButtonModule,
         FlexLayoutModule,
         NgxMaskDirective,
+        TranslateModule,
     ]
 })
 export class SalaryModule {}
