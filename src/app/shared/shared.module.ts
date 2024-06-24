@@ -6,12 +6,16 @@ import { AlertService } from './service/alert.service';
 
 import { SharedFormMessageComponent } from './components/form/message/message.component';
 
+import { OnlyAcceptNumberDotOrCommaDirective } from './directives/only-accept-number-dot-or-comma.directive';
+
 @NgModule({
     declarations: [
-        SharedFormMessageComponent
+        SharedFormMessageComponent,
+        OnlyAcceptNumberDotOrCommaDirective,
     ],
     exports: [
-        SharedFormMessageComponent
+        SharedFormMessageComponent,
+        OnlyAcceptNumberDotOrCommaDirective,
     ],
     imports: [
         CommonModule,
