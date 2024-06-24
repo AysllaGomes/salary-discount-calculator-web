@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatError } from '@angular/material/form-field';
 
+import { AlertService } from './service/alert.service';
+
 import { SharedFormMessageComponent } from './components/form/message/message.component';
 
 @NgModule({
@@ -14,6 +16,9 @@ import { SharedFormMessageComponent } from './components/form/message/message.co
     imports: [
         CommonModule,
         MatError
+    ],
+    providers: [
+        AlertService
     ]
 })
 export class SharedModule {}

@@ -1,11 +1,10 @@
-import Swal from 'sweetalert2';
-
 import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 import { Salary } from '../../shared/models/salary.model';
 import { DataFormSalary } from '../../shared/models/data-form-salary.model';
 
+import { AlertService } from '../../../shared/service/alert.service';
 import { SalaryService } from '../../shared/services/salary.service';
 import { FormUtilsService } from '../../../shared/service/form-utils.service';
 
@@ -25,6 +24,7 @@ export class SalaryDiscountComponent implements OnInit {
     public calculate = 'Calcular'
 
     constructor(
+        protected alertService: AlertService,
         protected salaryService: SalaryService,
         protected formUtilsService: FormUtilsService,
     ) {}
@@ -46,13 +46,16 @@ export class SalaryDiscountComponent implements OnInit {
                         this.salary = salary;
                     },
                     error: (error: Error): void => {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Oops...',
-                            text: `Error: ${error.message}`,
-                        }).then((): void => {});
+                        this.loadErrorAction(error);
                     }
                 });
         }
+    }
+
+    loadErrorAction(error: Error): void {
+        this.alertService.error(
+            '',
+            error.message
+        );
     }
 }
