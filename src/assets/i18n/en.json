@@ -1,0 +1,10 @@
+{
+    "TITLE": "Salary Discount",
+    "CALCULATE": "Calculate",
+    "BASE_SALARY": "Base Salary (R$)",
+    "DEPENDENTS": "Number of Dependents",
+    "DISCOUNT": "Discount (%)",
+    "SELECT_LANGUAGE": "Select Language",
+    "SELECT_OPTION": "Select",
+    "ERROR_CALCULATING_SALARY": "Error calculating salary. Please try again later."
+}
