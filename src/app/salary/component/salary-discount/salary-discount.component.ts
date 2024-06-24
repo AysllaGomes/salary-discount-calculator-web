@@ -21,7 +21,7 @@ export class SalaryDiscountComponent implements OnInit {
 
     public dataForm: DataFormSalary;
 
-    public calculate = 'Calcular'
+    public calculate: string = 'Calcular';
 
     constructor(
         protected alertService: AlertService,
@@ -54,7 +54,7 @@ export class SalaryDiscountComponent implements OnInit {
 
     loadErrorAction(error: Error): void {
         this.alertService.error(
-            '',
+            'Ops...',
             error.message
         );
     }
