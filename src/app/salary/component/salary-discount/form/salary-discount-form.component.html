@@ -4,7 +4,7 @@
         <div fxFlex="40" fxFlex.xs="100" fxFlex.sm="100">
             <mat-form-field appearance="outline" fxFlex="100">
                 <mat-label>Salário base (R$)</mat-label>
-                <input matInput type="number" formControlName="salary">
+                <input matInput formControlName="salary" mask="separator.2" prefix="R$ ">
             </mat-form-field>
 
             <app-shared-component-form-message
