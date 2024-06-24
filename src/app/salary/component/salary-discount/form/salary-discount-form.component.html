@@ -15,7 +15,13 @@
         <div fxFlex="40" fxFlex.xs="100" fxFlex.sm="100">
             <mat-form-field appearance="outline" fxFlex="100">
                 <mat-label>Número de dependentes</mat-label>
-                <input matInput type="number" formControlName="dependentCount">
+                <input
+                    matInput
+                    onlyAcceptNumberDorOrComma
+                    [acceptDot]="false"
+                    [acceptComma]="false"
+                    formControlName="dependentCount"
+                >
             </mat-form-field>
 
             <app-shared-component-form-message
@@ -26,7 +32,13 @@
         <div fxFlex="40" fxFlex.xs="100" fxFlex.sm="100">
             <mat-form-field appearance="outline" fxFlex="100">
                 <mat-label>Desconto em porcentagem (%)</mat-label>
-                <input matInput type="number" formControlName="discount">
+                <input
+                    matInput
+                    onlyAcceptNumberDorOrComma
+                    [acceptDot]="false"
+                    [acceptComma]="false"
+                    formControlName="discount"
+                >
             </mat-form-field>
 
             <app-shared-component-form-message
