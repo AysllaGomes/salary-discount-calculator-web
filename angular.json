@@ -38,7 +38,11 @@
                           "src/styles.scss"
                         ],
                         "scripts": [],
-                        "allowedCommonJsDependencies": ["sprintf-js"]
+                        "allowedCommonJsDependencies": [
+                            "lodash",
+                            "sweetalert2",
+                            "sprintf-js"
+                        ]
                     },
                     "configurations": {
                         "production": {

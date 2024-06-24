@@ -4,8 +4,8 @@ This project is an Angular application that calculates the net salary based on g
 
 ## Prerequisites
 
-- Node.js (version 18.19.0)
-- Angular CLI
+- [Node.js](https://nodejs.org/en/blog/release/v18.19.0) v.18.19.0
+- [Angular CLI](https://github.com/angular/angular-cli)
 
 ## Installation
 
@@ -57,13 +57,16 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Dependencies
 This project relies on the following dependencies:
 
-- Angular Material
-- ngx-mask
-- sprintf-js
+- [Angular Material](https://material.angular.io/components/categories)
+- [ngx-mask](https://github.com/JsDaddy/ngx-mask)
+- [@ngx-translate](https://github.com/ngx-translate)
+- [lodash](https://github.com/lodash/lodash)
+- [sweetalert2](https://github.com/sweetalert2/sweetalert2)
+- [sprintf-js](https://github.com/alexei/sprintf.js)
 
 ## Configuration
 Handling CommonJS Dependencies
-To avoid optimization bailouts due to CommonJS dependencies, we configured Angular to allow the usage of sprintf-js. This configuration can be found in the angular.json file:
+To avoid optimization bailouts due to CommonJS dependencies, we configured Angular to allow the usage of 'lodash', 'sweetalert2' and 'sprintf-js'. This configuration can be found in the angular.json file:
 
 ```bash
 {
@@ -73,7 +76,9 @@ To avoid optimization bailouts due to CommonJS dependencies, we configured Angul
                 "build": {
                     "options": {
                         "allowedCommonJsDependencies": [
-                            "sprintf-js"
+                            "lodash",
+                            "sweetalert2",
+                            "sprintf-js",
                         ]
                     }
                 }
