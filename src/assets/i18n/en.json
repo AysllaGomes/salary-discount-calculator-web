@@ -4,8 +4,16 @@
     "BASE_SALARY": "Base Salary (R$)",
     "DEPENDENTS": "Number of Dependents",
     "DISCOUNT": "Discount (R$)",
+    "VALUE_PER_DEPENDENT": "Value per Dependent",
+    "INSS_CONTRIBUTION": "INSS Contribution",
+    "IRRF_DISCOUNT": "IRRF Discount",
+    "NET_SALARY": "Net Salary",
     "SELECT_LANGUAGE": "Select Language",
     "SELECT_OPTION": "Select",
+    "CALCULATOR": {
+        "TITLE": "Gross Salary Calculator",
+        "DESCRIPTION": "Find out the value of your gross salary, considering discounts and more."
+    },
     "ABOUT": {
         "HOW_TO_USE": "How to use the gross salary calculator",
         "STEP_1": "Add the net value of your salary (value with discounts) in the first field of the gross salary calculator.",

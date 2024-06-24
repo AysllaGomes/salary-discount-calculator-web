@@ -17,13 +17,13 @@
         <div>
             <h2>{{ 'TITLE' | translate }}</h2>
 
-            <p>{{ 'BASE_SALARY' | translate }}: $ {{ dataForm.salary }}</p>
+            <p>{{ 'BASE_SALARY' | translate }}: {{ dataForm.salary }}</p>
             <p>{{ 'DEPENDENTS' | translate }}: {{ dataForm.dependentCount }}</p>
-            <p>{{ 'DISCOUNT' | translate }}: $ {{ dataForm.discount }}</p>
-            <p>Valor por Dependente: R$ {{ salary.valorPorDependente }}</p>
-            <p>Contribuição INSS: R$ {{ salary.contribuicaoINSS }}</p>
-            <p>Desconto de IRRF (27.5%): R$ {{ salary.descontoIRRF }}</p>
-            <h3>Salário Líquido: R$ {{ salary.salarioLiquido }}</h3>
+            <p>{{ 'DISCOUNT' | translate }}: {{ dataForm.discount }}</p>
+            <p>{{ 'VALUE_PER_DEPENDENT' | translate }}: R$ {{ salary.valorPorDependente }}</p>
+            <p>{{ 'INSS_CONTRIBUTION' | translate }}: R$ {{ salary.contribuicaoINSS }}</p>
+            <p>{{ 'IRRF_DISCOUNT' | translate }}: R$ {{ salary.descontoIRRF }}</p>
+            <h3>{{ 'NET_SALARY' | translate }}: R$ {{ salary.salarioLiquido }}</h3>
         </div>
     </div>
 </section>

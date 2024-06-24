@@ -4,8 +4,16 @@
     "BASE_SALARY": "Salário Base (R$)",
     "DEPENDENTS": "Número de Dependentes",
     "DISCOUNT": "Desconto (R$)",
+    "VALUE_PER_DEPENDENT": "Valor por Dependente",
+    "INSS_CONTRIBUTION": "Contribuição INSS",
+    "IRRF_DISCOUNT": "Desconto de IRRF",
+    "NET_SALARY": "Salário Líquido",
     "SELECT_LANGUAGE": "Selecionar Idioma",
     "SELECT_OPTION": "Selecione",
+    "CALCULATOR": {
+        "TITLE": "Calculadora de Salário Bruto",
+        "DESCRIPTION": "Descubra qual o valor do seu salário bruto, considerando descontos e mais."
+    },
     "ABOUT": {
         "HOW_TO_USE": "Como utilizar a calculadora de salário bruto",
         "STEP_1": "Adicione o valor líquido do seu salário (valor com os descontos) no primeiro campo da calculadora de salário bruto.",
