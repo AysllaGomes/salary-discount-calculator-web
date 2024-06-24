@@ -9,7 +9,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class SalaryDiscountFormComponent implements OnInit {
 
     @Output()
-    onCreateForm: EventEmitter<FormGroup> = new EventEmitter();
+    public onCreateForm: EventEmitter<FormGroup> = new EventEmitter();
 
     public form: FormGroup;
 
@@ -29,12 +29,10 @@ export class SalaryDiscountFormComponent implements OnInit {
                 Validators.required
             ],
             discount: [
-                null,
-                Validators.required
+                0,
             ],
             dependentCount: [
-                null,
-                Validators.required
+                0,
             ]
         });
 
