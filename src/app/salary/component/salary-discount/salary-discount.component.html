@@ -2,18 +2,24 @@
     <app-salary-discount-form (onCreateForm)="onCreateForm($event)"></app-salary-discount-form>
 
     <div fxLayout="row" fxLayoutAlign="center center">
-        <button mat-raised-button color="primary" type="submit" (click)="search()">
-            {{ calculate }}
+
+        <button
+            type="submit"
+            color="primary"
+            mat-raised-button
+            (click)="search()"
+        >
+            {{ 'CALCULATE' | translate }}
         </button>
     </div>
 
     <div *ngIf="salary" fxLayout="column" fxLayoutAlign="center center" class="result-section">
         <div>
-            <h2>Calculadora</h2>
+            <h2>{{ 'TITLE' | translate }}</h2>
 
-            <p>Salário base: R$ {{ dataForm.salary }}</p>
-            <p>Número de dependentes: {{ dataForm.dependentCount }}</p>
-            <p>Descontos: R$ {{ dataForm.discount }}</p>
+            <p>{{ 'BASE_SALARY' | translate }}: $ {{ dataForm.salary }}</p>
+            <p>{{ 'DEPENDENTS' | translate }}: {{ dataForm.dependentCount }}</p>
+            <p>{{ 'DISCOUNT' | translate }}: $ {{ dataForm.discount }}</p>
             <p>Valor por Dependente: R$ {{ salary.valorPorDependente }}</p>
             <p>Contribuição INSS: R$ {{ salary.contribuicaoINSS }}</p>
             <p>Desconto de IRRF (27.5%): R$ {{ salary.descontoIRRF }}</p>

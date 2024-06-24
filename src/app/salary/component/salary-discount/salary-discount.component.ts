@@ -21,8 +21,6 @@ export class SalaryDiscountComponent implements OnInit {
 
     public dataForm: DataFormSalary;
 
-    public calculate: string = 'Calcular';
-
     constructor(
         protected alertService: AlertService,
         protected salaryService: SalaryService,
