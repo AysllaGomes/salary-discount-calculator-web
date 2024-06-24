@@ -1,7 +1,10 @@
-<div>
-    <select #langSelect (change)="switchLanguage(langSelect.value)">
-        <option *ngFor="let lang of translate.getLangs()" [value]="lang">{{ lang }}</option>
-    </select>
+<div fxLayout="column" fxLayoutAlign="center center" class="select-background-color container">
+    <mat-label>{{ 'SELECT_LANGUAGE' | translate }}</mat-label>
+
+    <mat-select #langSelect (selectionChange)="switchLanguage(langSelect.value)">
+        <mat-option value="" [disabled]="true">{{ 'SELECT_OPTION' | translate }}</mat-option>
+        <mat-option *ngFor="let lang of translate.getLangs()" [value]="lang">{{ lang }}</mat-option>
+    </mat-select>
 </div>
 
 <router-outlet></router-outlet>
