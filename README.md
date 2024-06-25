@@ -51,6 +51,10 @@ To execute the unit tests via Karma, run:
     ng test
 ```
 
+## Changelog
+
+All major changes to this project are documented in the file [CHANGELOG.md](./CHANGELOG.md).
+
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
